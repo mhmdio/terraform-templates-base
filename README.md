@@ -6,7 +6,7 @@
   - **AWS** (S3 bucket, KMS key and Dynamodb table for State files)
   - **TFC** (Terraform Cloud workspace - Organization)
   - **Github** ( Repos - Access - Actions - Tokens)
-- **configurations**: config files for all 3rd party tools that used with Terraform, and pipelines samples:
+- **config**: config files for all 3rd party tools that used with Terraform, and pipelines samples:
   - **pipelines**: `CICD` files for automate Terraform Operations.
   - atlantis
   - terraform-docs
@@ -18,12 +18,23 @@
   - checkov
   - cloudrail
   - KICS
-- **documentations**: Documentation, screenshots and diagrams related files, alongside development workflow
+  - **docs**: Documentation, screenshots and diagrams related files, alongside development workflow
 - **modules**: custom Terraform modules folder, use public well-trusted module.
 - **stacks**: Terraform templates that define a working unit, contains:
-  - **envs**: contains environments `tfvars` values for state file and stack values.
+- **envs**: contains environments `tfvars` values for  stack values and `env.hcl` for state file
+  - `0env.tfvars` common environment values
+  - `STACK.hcl` stack state file values
+  - `.env` environment secrets and Cloud Access
 - **tests**: test implementation using LocalStack and conftest
 - **Taskfile.yml**: orchestrator for TF operations
+
+## Minimum Require tools for TF ops locally
+
+- Taskfile
+- terraform
+- terraform-docs
+- checkov
+- infracost
 
 ## Layout
 
