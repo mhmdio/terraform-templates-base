@@ -1,4 +1,4 @@
-# Terraform monoRepo Template
+# Terraform Templates Base
 
 **Mono Repo** Terraform Layout. Based on Vanilla Terraform, this layout used in Terminal or CI/CD operations, and Terraform Cloud.
 
