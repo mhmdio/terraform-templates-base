@@ -22,9 +22,10 @@
 - **modules**: custom Terraform modules folder, use public well-trusted module.
 - **stacks**: Terraform templates that define a working unit, contains:
 - **envs**: contains environments `tfvars` values for  stack values and `env.hcl` for state file
-  - `0env.tfvars` common environment values
+  - `region.tfvars` common environment values
   - `STACK.hcl` stack state file values
   - `.env` environment secrets and Cloud Access
+- **policies**: OPA policies
 - **tests**: test implementation using LocalStack and conftest
 - **Taskfile.yml**: orchestrator for TF operations
 
