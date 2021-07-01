@@ -1,4 +1,4 @@
 # backend.hcl
-workspaces { name = "network-workspace" }
+workspaces { name = "mgmt-workspace" }
 hostname     = "app.terraform.io"
 organization = "company"
