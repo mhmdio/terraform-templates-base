@@ -21,7 +21,7 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
   - `region.tfvars` common environment values
   - `network.tfvars` network stack values
   - `data.tfvars` data stack values
-  - `region.tfvars` app stack values
+  - `app.tfvars` app stack values
   - `network.hcl` network stack state file block
   - `data.hcl` data stack state file block
   - `app.hcl` app stack state file block
