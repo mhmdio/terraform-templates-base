@@ -2,6 +2,10 @@
 
 version: '3'
 
+includes:
+  tf: ./taskfiles/terraform.yml
+  releases: ./taskfiles/helmfile.yml
+
 vars:
   GREETING: Hello, World!
 
