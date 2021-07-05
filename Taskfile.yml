@@ -3,8 +3,8 @@
 version: '3'
 
 includes:
-  tf: ./taskfiles/terraform.yml
-  releases: ./taskfiles/helmfile.yml
+  tf: ./tasks/terraform.yml
+  releases: ./tasks/helmfile.yml
 
 vars:
   GREETING: Hello, World!
