@@ -9,7 +9,9 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
 - **bootstrap**: contains Terraform bootstrap for:
   - **AWS** [option 1] (S3 bucket, KMS key and Dynamodb table for State files) - generate state file template for each environment.
   - **TFC** [option 2] (Terraform Cloud workspaces - Organization - environment variables) - generate state file template for each environment.
-  - **Github** ( Repos - Access - Actions - Tokens)
+  - **Github** ( Repos - Access - Actions - Tokens) - generate two [minimum] repositories:
+    - `iac-terraform-templates`
+    - `iac-terraform-modules`
 - **docs**: Documentations, screenshots and diagrams related files, alongside development workflow, includes `drawio` file.
 - **stacks**: Terraform templates that define a working unit, mainly static infrastructure, including:
   - `app` stack [ target one or more account]: application related, mainly dynamic infrastructure.
@@ -26,7 +28,8 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
   - `data.hcl` data stack state file block
   - `app.hcl` app stack state file block
   - `.env` environment secrets and Cloud Access
-- **Taskfile.yml**: `Taskfile` orchestrator for operations
+- **Taskfile.yml**: `Taskfile` orchestrator for operations, includes other taskfiles from `tasks` folder
+- **tasks**: Taskfile files.
 - **CODEOWNERS**: Code owners for automate PR assignments.
 
 ---
@@ -44,6 +47,7 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
 ## List of tools for AWS/Terraform DevSecOps
 
 - Taskfile
+- Docker
 - terraform
 - terraform-docs
 - terraform-lsp
