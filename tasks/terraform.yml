@@ -1,0 +1,23 @@
+version: "3"
+
+vars:
+  TFPLAN: .tfplan
+
+tasks:
+  init:
+    dir: terraform/
+    desc: Init terraform
+    cmds:
+      - terraform init
+
+  plan:
+    dir: terraform/
+    desc: Show terraform resources creation
+    cmds:
+      - terraform plan -out={{.TFPLAN}}
+
+  apply:
+    dir: terraform/
+    desc: Apply resources creation
+    cmds:
+      - terraform apply "{{.TFPLAN}}"
