@@ -6,6 +6,12 @@
 Alert!: There are quite few ways/tools to layout your Infrastructure as code. this is for plain vanilla Terraform.
 ```
 
+## Overview
+
+This repo contains several distinct folders each with specific purpose, and it expected to run in order.
+
+### Recommended
+
 - **bootstrap**: contains Terraform bootstrap for:
   - **AWS** [option 1] (S3 bucket, KMS key and Dynamodb table for State files) - generate state file template for each environment.
   - **TFC** [option 2] (Terraform Cloud workspaces - Organization - environment variables) - generate state file template for each environment.
@@ -34,6 +40,8 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
 
 ---
 
+### Optional
+
 - **modules** [optional][use another monoRepo for modules]: custom Terraform modules folder, use public well-trusted module.
 - **config** [optional]: config files for all 3rd party tools that used with Terraform, and pipelines `CI/CD` samples files for automate Terraform Operations.
 - **helm** [optional]: `helm` and `helmfile`.
@@ -43,6 +51,16 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
 - **DevOps..sh** [optional]: `Bash` script orchestrator for operations.
 - **Makefile** [optional]: `Makefile` orchestrator for operations.
 - **Dockerfile** [optional]: `Dockerfile` to build an image with all tools needed for development.
+
+---
+
+## Order
+
+1. **bootstrap**: creates backends, workspaces and repos
+1. **envs/mgmt**: creates organization, accounts and SSO
+1. **envs/ENV/REGION/network**: creates networking and VPN.
+1. **envs/ENV/REGION/data**: creates databases, caches and S3 buckets.
+1. **envs/ENV/REGION/app**: creates dynamic App Infra.
 
 ## List of tools for AWS/Terraform DevSecOps
 
