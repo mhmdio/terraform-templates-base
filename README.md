@@ -1,5 +1,7 @@
 # Terraform Templates Base
 
+![Taskfile-Terraform](docs/tf-taskfile.svg)
+
 **Mono Repo** Terraform Layout **[highly opinionated]**. Based on Vanilla Terraform, this layout used in Terminal or CI/CD operations, and Terraform Cloud.
 
 ```yaml
@@ -10,7 +12,7 @@ Alert!: There are quite few ways/tools to layout your Infrastructure as code. th
 
 This repo contains several distinct folders each with specific purpose, and it expected to run in order.
 
-### Recommended
+### Recommended Layout
 
 - **bootstrap**: contains Terraform bootstrap for:
   - **AWS** [option 1] (S3 bucket, KMS key and Dynamodb table for State files) - generate state file template for each environment.
@@ -34,13 +36,23 @@ This repo contains several distinct folders each with specific purpose, and it e
   - `data.hcl` data stack state file block
   - `app.hcl` app stack state file block
   - `.env` environment secrets and Cloud Access
-- **Taskfile.yml**: `Taskfile` orchestrator for operations, includes other taskfiles from `tasks` folder
+- **Taskfile.yml**: `Taskfile` orchestrator for operations, includes other task files from `tasks` folder, check <https://github.com/mhmdio/iac-taskfile-framework> for more cli automation.
 - **tasks**: Taskfile files.
 - **CODEOWNERS**: Code owners for automate PR assignments.
 
 ---
 
-### Optional
+## Order of development and deployment
+
+1. **bootstrap**: creates backends, workspaces and repos
+1. **envs/mgmt**: creates organization, accounts and SSO
+1. **envs/ENV/REGION/network**: creates networking and VPN.
+1. **envs/ENV/REGION/data**: creates databases, caches and S3 buckets.
+1. **envs/ENV/REGION/app**: creates dynamic App Infra.
+
+---
+
+### Additional (optional) Layout
 
 - **modules** [optional][use another monoRepo for modules]: custom Terraform modules folder, use public well-trusted module.
 - **config** [optional]: config files for all 3rd party tools that used with Terraform, and pipelines `CI/CD` samples files for automate Terraform Operations.
@@ -54,17 +66,10 @@ This repo contains several distinct folders each with specific purpose, and it e
 
 ---
 
-## Order
-
-1. **bootstrap**: creates backends, workspaces and repos
-1. **envs/mgmt**: creates organization, accounts and SSO
-1. **envs/ENV/REGION/network**: creates networking and VPN.
-1. **envs/ENV/REGION/data**: creates databases, caches and S3 buckets.
-1. **envs/ENV/REGION/app**: creates dynamic App Infra.
-
-## List of tools for AWS/Terraform DevSecOps
+## List of tools for AWS/Terraform Development environment requirements
 
 - Taskfile
+- Git
 - Docker
 - terraform
 - terraform-docs
@@ -87,3 +92,4 @@ This repo contains several distinct folders each with specific purpose, and it e
 - direnv
 - drawio
 - VSCode
+- Lens
