@@ -1,6 +1,6 @@
 # Terraform Templates Base
 
-![Taskfile-Terraform](docs/tf-taskfile.svg)
+![Taskfile-Terraform](docs/tf-taskfile.png)
 
 **Mono Repo** Terraform Layout **[highly opinionated]**. Based on Vanilla Terraform, this layout used in Terminal or CI/CD operations, and Terraform Cloud.
 
