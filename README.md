@@ -21,12 +21,12 @@ This repo contains several distinct folders each with specific purpose, and it e
     - `iac-terraform-templates`
     - `iac-terraform-modules`
 - **docs**: Documentations, screenshots and diagrams related files, alongside development workflow, includes `drawio` file.
-- **stacks**: Terraform templates that define a working unit, mainly static infrastructure, including:
-  - `app` stack [ target one or more account]: application related, mainly dynamic infrastructure.
-  - `data` stack [ target one or more account]: databases, cache, s3 buckets, and data related.
-  - `network` stack [ target one or more account]: networking, DNS, and VPN.
-  - `mgmt` stack [ target one account]: management related, SSO.
-  - `sec` stack [ target one account]: security related.
+- **stacks**: Terraform templates that define a working unit, consist of static and dynamic infrastructure, including:
+  - `app` stack [dynamic] [target one or more account]: application related, mainly dynamic infrastructure.
+  - `data` stack [static] [target one or more account]: databases, cache, s3 buckets, and data related.
+  - `network` stack [static] [target one or more account]: networking, DNS, and VPN.
+  - `mgmt` stack [static] [target one account]: management related, SSO.
+  - `sec` stack [static] [target one account]: security related.
 - **envs**: contains environments [dev-stage-prod][mgmt-sec] and regions including:
   - `region.tfvars` common environment values
   - `network.tfvars` network stack values
