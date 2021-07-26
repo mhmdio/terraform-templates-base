@@ -36,8 +36,8 @@ This repo contains several distinct folders each with specific purpose, and it e
   - `data.hcl` data stack state file block
   - `app.hcl` app stack state file block
   - `.env` environment secrets and Cloud Access
-- **Taskfile.yml**: `Taskfile` orchestrator for operations, includes other task files from `tasks` folder, check <https://github.com/mhmdio/iac-taskfile-framework> for more cli automation.
-- **tasks**: Taskfile files.
+- **Taskfile.yml**: `Taskfile` orchestrator for operations, includes other task files from `tasks` folder.
+- **tasks**: Taskfile files - added as `submodule` from <https://github.com/mhmdio/iac-taskfile-framework>
 - **CODEOWNERS**: Code owners for automate PR assignments.
 
 ---
@@ -54,14 +54,14 @@ This repo contains several distinct folders each with specific purpose, and it e
 
 ### Additional (optional) Layout
 
-- **modules** [optional][use another monoRepo for modules]: custom Terraform modules folder, use public well-trusted module.
+- **modules** [optional][use another monoRepo for modules]: custom Terraform modules folder, use public well-trusted modules, use <https://github.com/mhmdio/terraform-module-base> for module template.
 - **config** [optional]: config files for all 3rd party tools that used with Terraform, and pipelines `CI/CD` samples files for automate Terraform Operations.
 - **helm** [optional]: `helm` and `helmfile`.
 - **serverless** [optional]: `Serverless` framework to manage *Dynamic infrastructure*
 - **policies** [optional]: `OPA` policies.
 - **tests** [optional]: test implementation using `LocalStack` and `conftest`
 - **DevOps..sh** [optional]: `Bash` script orchestrator for operations.
-- **Makefile** [optional]: `Makefile` orchestrator for operations.
+- **Makefile** [optional]: `Makefile` orchestrator for operations, check <https://github.com/mhmdio/iac-makefile-framework> for more Make files.
 - **Dockerfile** [optional]: `Dockerfile` to build an image with all tools needed for development.
 
 ---
@@ -93,3 +93,11 @@ This repo contains several distinct folders each with specific purpose, and it e
 - drawio
 - VSCode
 - Lens
+
+---
+
+## Related Repos
+
+- <https://github.com/mhmdio/terraform-module-base>
+- <https://github.com/mhmdio/iac-makefile-framework>
+- <https://github.com/mhmdio/iac-taskfile-framework>
